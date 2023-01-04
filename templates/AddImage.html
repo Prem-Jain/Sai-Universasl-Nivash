@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>AddImage</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+	<style>
+.formContainer{
+	border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+* {
+  box-sizing: border-box;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: orange;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+		input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+		body{
+			padding-top: 2.5%;
+		}
+@media(max-width: 1100px) {
+        .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;		
+</style>
+
+</head>
+	
+<body>
+	<div class="formContainer">
+	<div class="formContainer">
+		<form action="{{url_for('addImage', IDT=IDT) }}" method="post" enctype="multipart/form-data">
+			<div class="row">
+			<div class="col-25">
+			<label for="name">Daily Image</label>
+				</div>
+				<div class="col-75">
+			<input type="file" id="img" name="img" accept=".jpg, .jpeg"  required>
+				</div>
+			</div>
+			<br>
+			<div class="row">
+		<input type="submit" name="submit">
+			</div>
+		</form>
+	</div>
+		<br>
+		<a href="/gallery"><button class="btn btn-primary">Go Back</button></a>
+	</div>
+</body>
+</html>
