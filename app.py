@@ -161,7 +161,7 @@ def developers():
 
 @app.route('/login', methods=['POST', 'GET'])
 def login():
-    database = {'Admin@SUN': 'SUN_2011'}
+    database = {'UserName': 'PassWord'}
     records = get_entry()
     if request.method == 'POST':
         name1 = request.form['uname']
